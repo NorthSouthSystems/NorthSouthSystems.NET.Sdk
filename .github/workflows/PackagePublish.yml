@@ -24,9 +24,9 @@ jobs:
  
         - run: |
               $version = & nbgv get-version --variable NuGetPackageVersion
-              nuget pack NorthSouthSystems.NET.Sdk\NorthSouthSystems.NET.Sdk.nuspec -properties "version=$version;gitHubSHA=${{ github.sha }}"
+              nuget pack NorthSouthSystems.NET.Sdk.nuspec -properties "version=$version;gitHubSHA=${{ github.sha }}"
   
-        - run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_APIKEY}} "NorthSouthSystems.NET.Sdk\*.nupkg"
+        - run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_APIKEY}} "*.nupkg"
   
         - uses: actions/github-script@v7
           with:

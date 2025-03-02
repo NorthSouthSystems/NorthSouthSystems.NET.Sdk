@@ -17,8 +17,6 @@ jobs:
         - uses: actions/setup-dotnet@v3
           with:
               dotnet-version: 8.0.x
-              
-        - run: dotnet restore
   
         - run: |
               $version = & nbgv get-version --variable NuGetPackageVersion

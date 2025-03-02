@@ -1,0 +1,96 @@
+<Project>
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+        <!-- SourceLink: https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+        <!-- NuGet Symbols Package: https://learn.microsoft.com/en-us/nuget/create-packages/symbol-packages-snupkg -->
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <!-- NuGet Best Practices: https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
+        <Authors>North South Systems, LLC</Authors>
+        <Copyright>Copyright (c) 2024-2025 North South Systems, LLC</Copyright>
+        <PackageIcon>Icon.png</PackageIcon>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <!-- Deterministic Builds -->
+    <PropertyGroup Condition=" '$(GITHUB_ACTIONS)' == 'true' ">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="System" />
+        <Using Include="System.Collections.Generic" />
+        <Using Include="System.Linq" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\Icon.png" Pack="true" PackagePath="" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+    <Choose>
+        <When Condition=" $(MSBuildProjectName.EndsWith('.Benchmark')) ">
+            <PropertyGroup>
+                <OutputType>Exe</OutputType>
+                <IsPackable>false</IsPackable>
+                <SonarQubeExclude>true</SonarQubeExclude>
+            </PropertyGroup>
+
+            <ItemGroup>
+                <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+            </ItemGroup>
+
+            <ItemGroup>
+                <Using Include="BenchmarkDotNet.Attributes" />
+            </ItemGroup>
+        </When>
+
+        <When Condition=" $(MSBuildProjectName.EndsWith('.Test')) ">
+            <PropertyGroup>
+                <IsPackable>false</IsPackable>
+                <SonarQubeExclude>true</SonarQubeExclude>
+            </PropertyGroup>
+
+            <ItemGroup>
+                <PackageReference Include="FluentAssertions" Version="[7.1.0,8.0.0)" />
+                <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+                <PackageReference Include="xunit" Version="2.9.3" />
+                <PackageReference Include="xunit.runner.visualstudio" Version="3.0.1">
+                    <PrivateAssets>all</PrivateAssets>
+                    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+                </PackageReference>
+            </ItemGroup>
+
+            <ItemGroup>
+                <Using Include="FluentAssertions" />
+                <Using Include="Xunit" />
+            </ItemGroup>
+        </When>
+
+        <Otherwise>
+            <ItemGroup>
+                <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+                    <PrivateAssets>all</PrivateAssets>
+                    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+                </PackageReference>
+            </ItemGroup>
+
+            <ItemGroup>
+                <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+                    <_Parameter1>$(MSBuildProjectName).Test</_Parameter1>
+                </AssemblyAttribute>
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
+
+</Project>

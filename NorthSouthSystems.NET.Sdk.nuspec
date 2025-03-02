@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>NorthSouthSystems.NET.Sdk</id>
+        <version>$version$</version>
+        <authors>North South Systems, LLC</authors>
+        <copyright>Copyright (c) 2024-2025 North South Systems, LLC</copyright>
+        <license type="file">LICENSE</license>
+        <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+        <icon>Icon.png</icon>
+        <readme>README.md</readme>
+        <description>This .NET custom Sdk simplifies the configuration and management of all other NorthSouthSystems packages.</description>
+        <repository type="git" url="https://github.com/NorthSouthSystems/NorthSouthSystems.NET.Sdk.git" commit="$gitHubSHA$" />
+    </metadata>
+    <files>
+        <file src="Icon.png" />
+        <file src="LICENSE" />
+        <file src="README.md" />
+
+        <file src="Sdk.props" target="Sdk" />
+        <file src="Sdk.targets" target="Sdk" />
+    </files>
+</package>

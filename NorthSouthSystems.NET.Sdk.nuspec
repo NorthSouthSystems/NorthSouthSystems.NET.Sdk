@@ -4,7 +4,7 @@
         <id>NorthSouthSystems.NET.Sdk</id>
         <version>$version$</version>
         <authors>North South Systems, LLC</authors>
-        <copyright>Copyright (c) 2023-2025 North South Systems, LLC</copyright>
+        <copyright>Copyright (c) 2024-2025 North South Systems, LLC</copyright>
         <license type="file">LICENSE</license>
         <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
         <icon>Icon.png</icon>

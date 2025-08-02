@@ -18,10 +18,6 @@ jobs:
           with:
               dotnet-version: '9.0.x'
               dotnet-quality: 'ga'
-
-        - uses: NuGet/setup-nuget@v2
-          with:
-              nuget-version: 'latest'
   
         - shell: pwsh
           run: |
@@ -31,9 +27,9 @@ jobs:
         - shell: pwsh
           run: |
               $version = & nbgv get-version --variable NuGetPackageVersion
-              nuget pack NorthSouthSystems.NET.Sdk.nuspec -properties "version=$version;gitHubSHA=${{ github.sha }}"
+              dotnet pack --configuration Release NorthSouthSystems.NET.Sdk.csproj /p:Version="$version" /p:GitHubSHA="${{ github.sha }}"
   
-        - run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_APIKEY}} "*.nupkg"
+        - run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_APIKEY}} "bin/Release/*.nupkg"
   
         - uses: actions/github-script@v7
           with:

@@ -10,13 +10,14 @@ jobs:
             contents: write
 
         steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
           with:
               fetch-depth: 0 # Avoid shallow clone which breaks Nerdbank.GitVersioning.
         
-        - uses: actions/setup-dotnet@v3
+        - uses: actions/setup-dotnet@v4
           with:
-              dotnet-version: 8.0.x
+              dotnet-version: '9.0.x'
+              dotnet-quality: 'ga'
   
         - run: |
               $version = & nbgv get-version --variable NuGetPackageVersion

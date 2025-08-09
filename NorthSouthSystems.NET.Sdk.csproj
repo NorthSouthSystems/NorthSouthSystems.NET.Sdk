@@ -5,8 +5,8 @@
         <IsPackable>true</IsPackable>
 
         <NuspecFile>NorthSouthSystems.NET.Sdk.nuspec</NuspecFile>
-        <NuspecProperties>$(NuspecProperties);version=$(NuGetPackageVersion)</NuspecProperties>
-        <NuspecProperties>$(NuspecProperties);repository_commit=$(GitCommitId)</NuspecProperties>
+        <NuspecProperties>$(NuspecProperties);version=$(Version)</NuspecProperties>
+        <NuspecProperties>$(NuspecProperties);gitHubSHA=$(GitHubSHA)</NuspecProperties>
     </PropertyGroup>
 
     <ItemGroup>

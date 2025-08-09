@@ -24,7 +24,10 @@ jobs:
               $version = & nbgv get-version --variable NuGetPackageVersion
               Write-Output "VVERSION=v$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
  
-        - run: dotnet pack --configuration Release NorthSouthSystems.NET.Sdk.csproj
+        - shell: pwsh
+          run: |
+              $version = & nbgv get-version --variable NuGetPackageVersion
+              dotnet pack --configuration Release NorthSouthSystems.NET.Sdk.csproj /p:Version="$version" /p:GitHubSHA="${{ github.sha }}"
   
         - run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_APIKEY}} "bin/Release/*.nupkg"
   

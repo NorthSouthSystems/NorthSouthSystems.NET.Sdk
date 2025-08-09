@@ -1,0 +1,2 @@
+Most Polyfill Nullable cs files are not applicable for netcoreapp3.0+; however, a couple are not applicable for net5.0+.
+For simplicity and because netcoreapp3.0 and netcoreapp3.1 are no longer supported, we're only excluding them all for net5.0+.

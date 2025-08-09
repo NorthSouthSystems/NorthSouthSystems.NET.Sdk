@@ -3,6 +3,7 @@
     <metadata>
         <id>NorthSouthSystems.NET.Sdk</id>
         <version>$version$</version>
+        <developmentDependency>true</developmentDependency>
         <authors>North South Systems, LLC</authors>
         <copyright>Copyright (c) 2024-2025 North South Systems, LLC</copyright>
         <license type="file">LICENSE</license>
@@ -21,5 +22,6 @@
         <file src="Sdk.targets" target="Sdk" />
 
         <file src="cs/**/*.cs" target="contentFiles" />
+        <file src="cs/**/_._" target="contentFiles" />
     </files>
 </package>

@@ -3,7 +3,6 @@
     <PropertyGroup>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
         <!-- Repeatable Package restores -->
@@ -91,6 +90,10 @@
         </When>
 
         <Otherwise>
+            <PropertyGroup>
+                <Nullable>enable</Nullable>
+            </PropertyGroup>
+
             <ItemGroup>
                 <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" VersionOverride="9.0.0">
                     <PrivateAssets>all</PrivateAssets>

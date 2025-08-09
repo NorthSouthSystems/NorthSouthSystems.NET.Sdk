@@ -7,6 +7,7 @@
 
         <!-- Repeatable Package restores -->
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <NuGetLockFilePath>packages.$(OS).lock.json</NuGetLockFilePath>
 
         <!-- SourceLink: https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ -->
         <PublishRepositoryUrl>true</PublishRepositoryUrl>

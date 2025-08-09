@@ -8,4 +8,8 @@
         <NuspecProperties>$(NuspecProperties);version=$(Version)</NuspecProperties>
         <NuspecProperties>$(NuspecProperties);gitHubSHA=$(GitHubSHA)</NuspecProperties>
     </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="cs/**" />
+    </ItemGroup>
 </Project>

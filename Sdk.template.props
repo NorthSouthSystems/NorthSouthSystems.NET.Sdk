@@ -43,6 +43,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="NorthSouthSystems.NET.Sdk" VersionOverride="NorthSouthSystems.NET.Sdk.Version">
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
         <PackageReference Include="Nerdbank.GitVersioning" VersionOverride="3.7.115">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

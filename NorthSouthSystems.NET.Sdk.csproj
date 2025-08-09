@@ -12,4 +12,11 @@
     <ItemGroup>
         <Compile Remove="cs/**" />
     </ItemGroup>
+
+    <Target Name="ReplacePackageReferenceVersion" AfterTargets="CoreCompile">
+        <WriteLinesToFile
+            File="Sdk.props"
+            Lines=" $([System.IO.File]::ReadAllText('Sdk.template.props').Replace('NorthSouthSystems.NET.Sdk.Version','$(NuGetPackageVersion)')) "
+            Overwrite="true" />
+    </Target>
 </Project>

@@ -20,4 +20,7 @@
         <file src="Sdk.props" target="Sdk" />
         <file src="Sdk.targets" target="Sdk" />
     </files>
+    <contentFiles>
+        <files include="cs/netstandard2.0/Polyfill/**/*.cs" />
+    </contentFiles>
 </package>

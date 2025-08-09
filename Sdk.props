@@ -3,6 +3,7 @@
     <PropertyGroup>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
         <!-- SourceLink: https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ -->

@@ -11,7 +11,7 @@
         <icon>Icon.png</icon>
         <readme>README.md</readme>
         <description>This .NET custom Sdk simplifies the configuration and management of all other NorthSouthSystems packages.</description>
-        <repository type="git" url="https://github.com/NorthSouthSystems/NorthSouthSystems.NET.Sdk.git" commit="$gitHubSHA$" />
+        <repository type="git" url="https://github.com/NorthSouthSystems/NorthSouthSystems.NET.Sdk.git" commit="$repository_commit$" />
     </metadata>
     <files>
         <file src="Icon.png" />

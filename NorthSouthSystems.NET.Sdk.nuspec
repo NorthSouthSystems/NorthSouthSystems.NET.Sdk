@@ -20,8 +20,5 @@
 
         <file src="Sdk.props" target="Sdk" />
         <file src="Sdk.targets" target="Sdk" />
-
-        <file src="cs/**/*.cs" target="contentFiles" />
-        <file src="cs/**/_._" target="contentFiles" />
     </files>
 </package>

@@ -7,6 +7,9 @@
 
         <!-- Repeatable Package restores -->
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <!-- When targeting depends on OS (e.g. NSS.Text.Test: net481 on Windows, net9.0 on Windows + Unix), -->
+        <!-- a single packages.lock.json file is inadequate. Single targeting projects can simply override in -->
+        <!-- their Directory.build.props. -->
         <NuGetLockFilePath>packages.$(OS).lock.json</NuGetLockFilePath>
 
         <!-- SourceLink: https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ -->
@@ -43,9 +46,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="NorthSouthSystems.NET.Sdk" VersionOverride="NorthSouthSystems.NET.Sdk.Version">
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
         <PackageReference Include="Nerdbank.GitVersioning" VersionOverride="3.7.115">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

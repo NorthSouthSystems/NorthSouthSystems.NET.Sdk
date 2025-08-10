@@ -6,20 +6,11 @@
         <NuspecFile>NorthSouthSystems.NET.Sdk.nuspec</NuspecFile>
     </PropertyGroup>
 
-    <ItemGroup>
-        <Compile Remove="cs/**" />
-    </ItemGroup>
-
-    <Target Name="ReplaceNuGetPackageVersion" AfterTargets="CoreCompile">
+    <Target Name="UseNerdbankGitVersioningProperties" AfterTargets="CoreCompile">
         <!-- Nerdbank.GitVersioning MSBuild Properties are not available until after compilation. -->
         <PropertyGroup>
             <NuspecProperties>$(NuspecProperties);version=$(NuGetPackageVersion)</NuspecProperties>
             <NuspecProperties>$(NuspecProperties);repository_commit=$(GitCommitId)</NuspecProperties>
         </PropertyGroup>
-
-        <WriteLinesToFile
-            File="Sdk.props"
-            Lines=" $([System.IO.File]::ReadAllText('Sdk.template.props').Replace('NorthSouthSystems.NET.Sdk.Version','$(NuGetPackageVersion)')) "
-            Overwrite="true" />
     </Target>
 </Project>

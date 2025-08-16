@@ -1,6 +1,6 @@
 <Project>
 
-    <Target Name="ValidatePackageMetadataFilesExist" BeforeTargets="CoreCompile">
+    <Target Name="ValidatePackageMetadataFilesExist" BeforeTargets="CoreCompile" Condition=" '$(IsPackable)' == 'true' ">
         <Error Condition=" !Exists('..\Icon.png') " Text=" The solution root must contain an Icon.png file." />
         <Error Condition=" !Exists('..\LICENSE') " Text=" The solution root must contain a LICENSE file." />
         <Error Condition=" !Exists('..\README.md') " Text=" The solution root must contain a README.md file." />

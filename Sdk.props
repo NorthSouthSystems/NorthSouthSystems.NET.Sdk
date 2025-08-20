@@ -70,6 +70,7 @@
 
         <When Condition=" $(MSBuildProjectName.EndsWith('.Test')) Or $(MSBuildProjectName.EndsWith('.Tests')) ">
             <PropertyGroup>
+                <OutputType>Exe</OutputType>
                 <IsPackable>false</IsPackable>
                 <SonarQubeExclude>true</SonarQubeExclude>
             </PropertyGroup>

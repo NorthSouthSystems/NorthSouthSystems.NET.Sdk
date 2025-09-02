@@ -34,9 +34,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\Icon.png" Pack="true" PackagePath="" />
-        <None Include="..\LICENSE" Pack="true" PackagePath="" />
-        <None Include="..\README.md" Pack="true" PackagePath="" />
+        <None Include="..\Icon.png" Pack="true" PackagePath="" Visible="false" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="" Visible="false" />
+        <None Include="..\README.md" Pack="true" PackagePath="" Visible="false" />
     </ItemGroup>
 
     <ItemGroup>

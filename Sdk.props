@@ -28,9 +28,11 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
-    <!-- Deterministic Builds -->
     <PropertyGroup Condition=" '$(GITHUB_ACTIONS)' == 'true' ">
+        <!-- Deterministic Builds -->
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <!-- Used for skipping long running tests or reducing fuzz durations during CI builds. -->
+        <DefineConstants>$(DefineConstants);GITHUB_ACTIONS</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>

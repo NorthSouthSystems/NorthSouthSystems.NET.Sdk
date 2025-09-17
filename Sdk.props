@@ -69,6 +69,9 @@
                 <OutputType>Exe</OutputType>
                 <IsPackable>false</IsPackable>
                 <SonarQubeExclude>true</SonarQubeExclude>
+                <!-- CA1050  : Declare types in namespaces -->
+                <!-- IDE1006 : Naming rule violation: Prefix 'T_' is not expected -->
+                <NoWarn>$(NoWarn),CA1050,IDE1006</NoWarn>
             </PropertyGroup>
 
             <ItemGroup>

@@ -42,7 +42,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Nerdbank.GitVersioning" VersionOverride="3.7.115">
+        <PackageReference Include="Nerdbank.GitVersioning" VersionOverride="3.8.118">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
@@ -59,7 +59,7 @@
             </PropertyGroup>
 
             <ItemGroup>
-                <PackageReference Include="BenchmarkDotNet" VersionOverride="0.15.2" />
+                <PackageReference Include="BenchmarkDotNet" VersionOverride="0.15.4" />
             </ItemGroup>
 
             <ItemGroup>
@@ -78,10 +78,10 @@
             </PropertyGroup>
 
             <ItemGroup>
-                <PackageReference Include="AwesomeAssertions" VersionOverride="9.1.0" />
-                <PackageReference Include="Microsoft.NET.Test.Sdk" VersionOverride="17.14.1" />
-                <PackageReference Include="xunit.v3" VersionOverride="3.0.1" />
-                <PackageReference Include="xunit.runner.visualstudio" VersionOverride="3.1.4">
+                <PackageReference Include="AwesomeAssertions" VersionOverride="9.2.0" />
+                <PackageReference Include="Microsoft.NET.Test.Sdk" VersionOverride="18.0.0" />
+                <PackageReference Include="xunit.v3" VersionOverride="3.1.0" />
+                <PackageReference Include="xunit.runner.visualstudio" VersionOverride="3.1.5">
                     <PrivateAssets>all</PrivateAssets>
                     <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
                 </PackageReference>

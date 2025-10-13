@@ -78,6 +78,11 @@
             </PropertyGroup>
 
             <ItemGroup>
+                <AssemblyAttribute Include="Xunit.CaptureConsoleAttribute" />
+                <AssemblyAttribute Include="Xunit.CaptureTraceAttribute" />
+            </ItemGroup>
+
+            <ItemGroup>
                 <PackageReference Include="AwesomeAssertions" VersionOverride="9.2.0" />
                 <PackageReference Include="Microsoft.NET.Test.Sdk" VersionOverride="18.0.0" />
                 <PackageReference Include="xunit.v3" VersionOverride="3.1.0" />

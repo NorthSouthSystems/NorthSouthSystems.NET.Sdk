@@ -41,7 +41,9 @@
         <None Include="..\README.md" Pack="true" PackagePath="" Visible="false" />
     </ItemGroup>
 
-    <ItemGroup>
+    <!-- This Condition can likely be removed with the next NBGV release (the fix was merged). -->
+    <!-- https://github.com/dotnet/Nerdbank.GitVersioning/pull/1284 -->
+    <ItemGroup Condition=" '$(DEPENDABOT)' != 'true' ">
         <PackageReference Include="Nerdbank.GitVersioning" VersionOverride="3.8.118">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

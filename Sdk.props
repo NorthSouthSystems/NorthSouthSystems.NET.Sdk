@@ -1,16 +1,14 @@
 <Project>
 
     <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
         <!-- Repeatable Package restores -->
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-        <!-- When targeting depends on OS (e.g. NSS.Text.Test: net481 on Windows, net9.0 on Windows + Unix), -->
-        <!-- a single packages.lock.json file is inadequate. Single targeting projects can simply override in -->
-        <!-- their Directory.build.props. -->
-        <NuGetLockFilePath>packages.$(OS).lock.json</NuGetLockFilePath>
+        <NuGetLockFilePath>packages.lock.json</NuGetLockFilePath>
 
         <!-- SourceLink: https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ -->
         <PublishRepositoryUrl>true</PublishRepositoryUrl>

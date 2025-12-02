@@ -54,6 +54,7 @@
             <PropertyGroup>
                 <OutputType>Exe</OutputType>
                 <IsPackable>false</IsPackable>
+                <IsBenchmarkProject>true</IsBenchmarkProject>
                 <SonarQubeExclude>true</SonarQubeExclude>
                 <!-- CA1050  : Declare types in namespaces -->
                 <!-- IDE1006 : Naming rule violation: Prefix 'B_' is not expected -->
@@ -73,6 +74,8 @@
             <PropertyGroup>
                 <OutputType>Exe</OutputType>
                 <IsPackable>false</IsPackable>
+                <!-- Microsoft.NET.Test.Sdk will also set this; however, it may do so "too late" to be useful. -->
+                <IsTestProject>true</IsTestProject>
                 <SonarQubeExclude>true</SonarQubeExclude>
                 <!-- CA1050  : Declare types in namespaces -->
                 <!-- IDE1006 : Naming rule violation: Prefix 'T_' is not expected -->

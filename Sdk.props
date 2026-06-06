@@ -107,6 +107,7 @@
             <PropertyGroup>
                 <AnalysisMode>All</AnalysisMode>
                 <Nullable>enable</Nullable>
+                <GenerateDocumentationFile>true</GenerateDocumentationFile>
             </PropertyGroup>
 
             <ItemGroup>

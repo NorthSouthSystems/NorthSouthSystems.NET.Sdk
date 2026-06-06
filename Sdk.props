@@ -20,7 +20,7 @@
 
         <!-- NuGet Best Practices: https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
         <Authors>North South Systems, LLC</Authors>
-        <Copyright>Copyright (c) 2024-2025 North South Systems, LLC</Copyright>
+        <Copyright>Copyright (c) 2024-2026 North South Systems, LLC</Copyright>
         <PackageIcon>Icon.png</PackageIcon>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>

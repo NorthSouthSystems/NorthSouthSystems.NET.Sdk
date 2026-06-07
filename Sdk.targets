@@ -1,6 +1,7 @@
 <Project>
 
     <Target Name="ValidatePackageMetadataFilesExist" BeforeTargets="Pack" Condition=" '$(IsPackable)' == 'true' ">
+        <!-- $(MSBuildProjectDirectory) does NOT include a trailing slash. -->
         <Error Condition=" !Exists('$(MSBuildProjectDirectory)/Icon.png') And !Exists('$(MSBuildProjectDirectory)/../Icon.png') "
                Text=" The project or solution root must contain an Icon.png file." />
         <Error Condition=" !Exists('$(MSBuildProjectDirectory)/LICENSE') And !Exists('$(MSBuildProjectDirectory)/../LICENSE') "

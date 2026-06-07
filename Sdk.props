@@ -38,6 +38,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <!-- $(MSBuildProjectDirectory) does NOT include a trailing slash. -->
+
         <None Include="$(MSBuildProjectDirectory)/Icon.png" Pack="true" PackagePath="" Visible="false"
               Condition=" Exists('$(MSBuildProjectDirectory)/Icon.png') " />
         <None Include="$(MSBuildProjectDirectory)/../Icon.png" Pack="true" PackagePath="" Visible="false"

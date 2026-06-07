@@ -38,9 +38,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\Icon.png" Pack="true" PackagePath="" Visible="false" />
-        <None Include="..\LICENSE" Pack="true" PackagePath="" Visible="false" />
-        <None Include="..\README.md" Pack="true" PackagePath="" Visible="false" />
+        <None Include="$(MSBuildProjectDirectory)/Icon.png" Pack="true" PackagePath="" Visible="false"
+              Condition=" Exists('$(MSBuildProjectDirectory)/Icon.png') " />
+        <None Include="$(MSBuildProjectDirectory)/../Icon.png" Pack="true" PackagePath="" Visible="false"
+              Condition=" !Exists('$(MSBuildProjectDirectory)/Icon.png') " />
+
+        <None Include="$(MSBuildProjectDirectory)/LICENSE" Pack="true" PackagePath="" Visible="false"
+              Condition=" Exists('$(MSBuildProjectDirectory)/LICENSE') " />
+        <None Include="$(MSBuildProjectDirectory)/../LICENSE" Pack="true" PackagePath="" Visible="false"
+              Condition=" !Exists('$(MSBuildProjectDirectory)/LICENSE') " />
+
+        <None Include="$(MSBuildProjectDirectory)/README.md" Pack="true" PackagePath="" Visible="false"
+              Condition=" Exists('$(MSBuildProjectDirectory)/README.md') " />
+        <None Include="$(MSBuildProjectDirectory)/../README.md" Pack="true" PackagePath="" Visible="false"
+              Condition=" !Exists('$(MSBuildProjectDirectory)/README.md') " />
     </ItemGroup>
 
     <ItemGroup>

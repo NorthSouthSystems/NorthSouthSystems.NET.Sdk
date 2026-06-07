@@ -1,9 +1,12 @@
 <Project>
 
     <Target Name="ValidatePackageMetadataFilesExist" BeforeTargets="Pack" Condition=" '$(IsPackable)' == 'true' ">
-        <Error Condition=" !Exists('..\Icon.png') " Text=" The solution root must contain an Icon.png file." />
-        <Error Condition=" !Exists('..\LICENSE') " Text=" The solution root must contain a LICENSE file." />
-        <Error Condition=" !Exists('..\README.md') " Text=" The solution root must contain a README.md file." />
+        <Error Condition=" !Exists('$(MSBuildProjectDirectory)/Icon.png') And !Exists('$(MSBuildProjectDirectory)/../Icon.png') "
+               Text=" The project or solution root must contain an Icon.png file." />
+        <Error Condition=" !Exists('$(MSBuildProjectDirectory)/LICENSE') And !Exists('$(MSBuildProjectDirectory)/../LICENSE') "
+               Text=" The project or solution root must contain a LICENSE file." />
+        <Error Condition=" !Exists('$(MSBuildProjectDirectory)/README.md') And !Exists('$(MSBuildProjectDirectory)/../README.md') "
+               Text=" The project or solution root must contain a README.md file." />
     </Target>
 
 </Project>
